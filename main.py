@@ -38,28 +38,30 @@ def get_min_max_by_time(hour=None, minute=None):
     if minute is None:
         minute = time_bj.minute
     time_rate = min((hour * 60 + minute) / (22 * 60), 1)
+    print(f"当前执行时间：{hour} --- 最小值：{minute} --- 最大值：{time_rate}")
 
     # 默认值
     step = 1000
     # 早上7-8点区间步数：5k
     if 7 <= hour < 8:
-        step = random.randint(3891, 5000)
+        # step = random.randint(3891, 5000)
     # 早上8-9点区间步数：1w
     elif 8 <= hour < 9:
-       step =  random.randint(5121, 10000)
+    #    step =  random.randint(5121, 10000)
     # 下午7-8点区间步数：1.5w
     elif 17 <= hour < 20:
-        step = random.randint(10213, 15000)
+        print(f"当前进入了17-20的时间区间：{hour}")
+        # step = random.randint(10213, 15000)
     # 下午8-9点区间步数：2w
     elif 20 <= hour < 21:
-        step = random.randint(15121, 20000)
+        # step = random.randint(15121, 20000)
     else:
     # 都不符合上面的条件，则直接设置为25000左右
-        step = random.randint(23716, 26000)
+        # step = random.randint(23716, 26000)
 
     # 最小值、最大值
     min_step = step
-    max_step = step + 100
+    max_step = (step + 100)
     print(f"当前执行时间：{hour} --- 最小值：{min_step} --- 最大值：{max_step}")
     return int(min_step), int(max_step)
 
