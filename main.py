@@ -41,7 +41,7 @@ def get_min_max_by_time(hour=None, minute=None):
     print(f"==========================================")
     print(f"当前北京时间为：{hour}小时 --- {minute}分钟")
     print(f"==========================================")
-    print(f"刷步区间值：\n早上7-8点区间步数：5k\n早上8-9点区间步数：1w\n下午7-8点区间步数：1.5w")
+    print(f"刷步区间值：\n早上7-8点区间步数：5k\n早上8-9点区间步数：1w\n下午6-7点区间步数：1.5w\n下午7-8点区间步数：2w")
     print(f"==========================================")
 
     # 默认值
@@ -52,11 +52,11 @@ def get_min_max_by_time(hour=None, minute=None):
     # 早上8-9点区间步数：1w
     elif 8 <= hour < 9:
        step =  random.randint(5121, 10000)
-    # 下午7-8点区间步数：1.5w
-    elif 19 <= hour < 20:
+    # 下午6-7点区间步数：1.5w
+    elif 18 <= hour < 19:
         step = random.randint(10213, 15000)
-    # 下午8-9点区间步数：2w
-    elif 20 <= hour < 21:
+    # 下午7-8点区间步数：2w
+    elif 19 <= hour < 20:
         step = random.randint(15121, 20000)
     else:
     # 都不符合上面的条件，则直接设置为25000左右
