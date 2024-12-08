@@ -44,20 +44,20 @@ def get_min_max_by_time(hour=None, minute=None):
     step = 1000
     # 早上7-8点区间步数：5k
     if 7 <= hour < 8:
-        # step = random.randint(3891, 5000)
+        step = random.randint(3891, 5000)
     # 早上8-9点区间步数：1w
-    if 8 <= hour < 9:
-    #    step =  random.randint(5121, 10000)
+    elif 8 <= hour < 9:
+       step =  random.randint(5121, 10000)
     # 下午7-8点区间步数：1.5w
-    if 17 <= hour < 20:
+    elif 17 <= hour < 20:
         print(f"当前进入了17-20的时间区间：{hour}")
-        # step = random.randint(10213, 15000)
+        step = random.randint(10213, 15000)
     # 下午8-9点区间步数：2w
-    if 20 <= hour < 21:
-        # step = random.randint(15121, 20000)
+    elif 20 <= hour < 21:
+        step = random.randint(15121, 20000)
     else:
     # 都不符合上面的条件，则直接设置为25000左右
-        # step = random.randint(23716, 26000)
+        step = random.randint(23716, 26000)
 
     # 最小值、最大值
     min_step = step
